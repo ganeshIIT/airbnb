@@ -15,6 +15,7 @@ DTYPE_MAP = {
     "object": "varchar(max)",
     "datetime64[ns]": "datetime2",
     "bool": "bit",
+    "boolean": "bit",
     # To do - map timedelta64[ns] to seconds or string
 }
 
