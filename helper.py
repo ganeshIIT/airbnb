@@ -30,7 +30,7 @@ def get_connstring(driver= '{ODBC Driver 17 for SQL Server}'):
      
     with open('settings.txt', mode='r') as f:
         cs = f.readline().replace('\n', '')
-    d = dict(x.split(':') for x in cs.split(','))
+    d = dict(x.split(':') for x in cs.split(' '))
     #print(d)
     server = d['server']
     username = d['username']
@@ -299,7 +299,7 @@ if __name__ == "__main__":
     # using connection function
     cstring = get_connstring()
     with pyodbc.connect(cstring) as conn:
-        query = "SELECT top 10 * from health"
+        query = "SELECT top 10 * from listings"
         df = pd.read_sql(query, conn)
         print(df)
 
