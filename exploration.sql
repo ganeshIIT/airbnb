@@ -36,3 +36,13 @@ select distinct(province) from listings(nolock)
 
 -- create proc test as 
 -- select top 10 * from calendar
+
+select top 6 * from listings(nolock)
+select distinct(room_type) from listings
+
+select 
+sum(calculated_host_listings_count),
+sum(calculated_host_listings_count_entire_homes)+
+sum(calculated_host_listings_count_private_rooms)+
+sum(calculated_host_listings_count_shared_rooms)
+from listings
